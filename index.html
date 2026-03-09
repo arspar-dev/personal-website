@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burhan Kocabiyik — Otomasyon Çözümleri & Girişimci</title>
+  <meta name="description" content="Burhan Kocabiyik, şirketlere n8n ve yapay zeka otomasyon sistemleri kuruyor. ARspar'ı Floorplanner'a sattı. Coremagnet ile işletmelerin saatlik işlerini dakikalara indiriyor.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Burhan Kocabiyik</a>
+    <div class="nav-links" id="nav-links">
+      <a href="#about">Hakkımda</a>
+      <a href="#ventures">Şirketler</a>
+      <a href="#resources">Kaynaklar</a>
+      <a href="#blog">Blog</a>
+      <a href="#videos">Videolar</a>
+    </div>
+    <a href="links.html" class="btn btn-ghost btn-sm" style="margin-left:auto">Tüm Linkler</a>
+    <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white btn-sm">Ücretsiz Rehber</a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+
+      <div class="hero-text" data-anim>
+        <div class="hero-tag">
+          <span class="hero-tag-dot"></span>
+          Hollanda'nın En İyi 25 Yaş Altı Girişimcisi 2022
+        </div>
+        <h1>Şirketlerin saatler harcadığı işleri otomasyonla dakikalara indiriyorum.</h1>
+        <p class="hero-sub">
+          Rotterdam merkezli girişimci. <strong>ARspar</strong>'ı Floorplanner'a sattı. Şimdi <strong>Coremagnet</strong> ile şirketlere n8n ve yapay zeka destekli otomasyon sistemleri kuruyor — insan saatini işlere değil, büyümeye harca.
+        </p>
+        <div class="hero-actions">
+          <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white">Ücretsiz Otomasyon Rehberini İndir</a>
+          <a href="#ventures" class="btn btn-ghost">Şirketlerim</a>
+        </div>
+        <div class="hero-socials">
+          <a href="https://www.linkedin.com/in/burhankocabiyik/" target="_blank" class="hero-social">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://x.com/Techburhan" target="_blank" class="hero-social">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X / Twitter
+          </a>
+          <a href="https://www.instagram.com/benburhankocabiyik/" target="_blank" class="hero-social">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
+          <a href="links.html" class="hero-social">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+            Tüm Linkler
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-photo" data-anim data-delay="150">
+        <div class="hero-photo-frame">
+          <!-- Fotoğrafı eklemek için: <img src="foto.jpg" alt="Burhan Kocabiyik"> -->
+          <div class="hero-photo-initials">BK</div>
+        </div>
+        <div class="hero-stat hero-stat-1">
+          <p class="hero-stat-label">Satın Alan</p>
+          <p class="hero-stat-value">Floorplanner</p>
+        </div>
+        <div class="hero-stat hero-stat-2">
+          <p class="hero-stat-label">Kurulan Otomasyon</p>
+          <p class="hero-stat-value">12+</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section class="metrics">
+  <div class="container">
+    <div class="metrics-row">
+      <div class="metric" data-anim>
+        <span class="metric-num" data-count="12">0</span>
+        <span class="metric-label">Kurulan Otomasyon Sistemi</span>
+      </div>
+      <div class="metric" data-anim data-delay="80">
+        <span class="metric-num" data-count="70">0</span>
+        <span class="metric-label">Kurumsal Müşteri</span>
+      </div>
+      <div class="metric" data-anim data-delay="160">
+        <span class="metric-num" data-count="1">0</span>
+        <span class="metric-label">Başarılı Exit (ARspar)</span>
+      </div>
+      <div class="metric" data-anim data-delay="240">
+        <span class="metric-num">€1M+</span>
+        <span class="metric-label">Elde Edilen Gelir</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRESS -->
+<section class="press-bar">
+  <div class="container">
+    <p class="press-bar-label" data-anim>Basında Yer Aldım</p>
+    <div class="press-items" data-anim data-delay="80">
+      <a href="https://siliconcanals.com/rotterdam-floorplanner-buys-arspar/" target="_blank" class="press-item">
+        <span class="press-pub">Silicon Canals</span>
+        <span class="press-hl">"Floorplanner buys ARspar technologies to enhance its digital space planning platform"</span>
+        <span class="press-yr">Mayıs 2024 ↗</span>
+      </a>
+      <a href="https://egirisim.com/2024/05/17/yerli-girisim-arspar-hollanda-merkezli-floorplanner-tarafindan-satin-alindi/" target="_blank" class="press-item">
+        <span class="press-pub">eGirişim</span>
+        <span class="press-hl">"Yerli girişim ARspar, Hollanda merkezli Floorplanner tarafından satın alındı"</span>
+        <span class="press-yr">Mayıs 2024 ↗</span>
+      </a>
+      <a href="https://bazaartimes.com/floorplanner-acquires-turkish-startup-arspar-to-enhance-digital-space-planning-tools/" target="_blank" class="press-item">
+        <span class="press-pub">Bazaar Times</span>
+        <span class="press-hl">"Floorplanner Acquires Turkish Startup ARspar to Enhance Digital Space Planning Tools"</span>
+        <span class="press-yr">Mayıs 2024 ↗</span>
+      </a>
+      <a href="https://tracxn.com/d/companies/arspar/__ETEYqISSZmAOQ4RB2y45cDsrSdIc3R0jsTnDDonVL2w" target="_blank" class="press-item">
+        <span class="press-pub">Tracxn</span>
+        <span class="press-hl">"ARspar — AI-powered photo editing platform for e-commerce, 70+ enterprise clients including Lamborghini & Westwing"</span>
+        <span class="press-yr">2024 ↗</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- VENTURES -->
+<section class="section-alt" id="ventures">
+  <div class="container">
+    <p class="section-label" data-anim>Portföy</p>
+    <h2 data-anim style="margin-bottom:40px">Neler Kurdum</h2>
+    <div class="ventures-grid">
+
+      <div class="venture venture-active" data-anim>
+        <div class="venture-top">
+          <div class="venture-mark vm-cm">CM</div>
+          <span class="venture-badge vb-active">Aktif</span>
+        </div>
+        <div>
+          <h3>Coremagnet</h3>
+          <p class="venture-yr">2024 — Devam Ediyor</p>
+          <p class="venture-desc">Şirketlere n8n ve yapay zeka ile otomasyon sistemleri kuran ajans. E-posta, CRM, satış pipeline ve içerik otomasyonu. Saatlik tekrarlayan işleri tamamen ortadan kaldırıyoruz.</p>
+        </div>
+        <div class="venture-chips">
+          <span class="chip">n8n Otomasyon</span><span class="chip">Yapay Zeka</span><span class="chip">İş Süreçleri</span>
+        </div>
+        <a href="https://coremagnetb2b.com" target="_blank" class="venture-link">Coremagnet'i Ziyaret Et →</a>
+      </div>
+
+      <div class="venture" data-anim data-delay="80">
+        <div class="venture-top">
+          <div class="venture-mark vm-ar">AR</div>
+          <span class="venture-badge vb-acquired">✓ Satın Alındı</span>
+        </div>
+        <div>
+          <h3>ARspar</h3>
+          <p class="venture-yr">2021 — 2024</p>
+          <p class="venture-desc">E-ticaret için artırılmış gerçeklik ürün görselleştirme platformu. €1M+ gelire, 70 kurumsal müşteriye, 55.000 kullanıcıya ulaştı. Mayıs 2024'te Floorplanner tarafından satın alındı.</p>
+        </div>
+        <div class="venture-chips">
+          <span class="chip">Artırılmış Gerçeklik</span><span class="chip">E-ticaret</span><span class="chip">SaaS</span>
+        </div>
+        <span class="venture-exit">Floorplanner tarafından satın alındı · Mayıs 2024</span>
+      </div>
+
+      <div class="venture" data-anim data-delay="160">
+        <div class="venture-top">
+          <div class="venture-mark vm-at">AT</div>
+          <span class="venture-badge vb-closed">Kapatıldı</span>
+        </div>
+        <div>
+          <h3>ARtonar</h3>
+          <p class="venture-yr">2022</p>
+          <p class="venture-desc">NFT döneminde 3D NFT modelleri üreten Web3 şirketi. 6 ayda €250K gelire ulaştı. NFT balonunun patlamasıyla kapatıldı — pazar zamanlaması hakkında çok şey öğretti.</p>
+        </div>
+        <div class="venture-chips">
+          <span class="chip">Web3</span><span class="chip">NFT</span><span class="chip">3D</span>
+        </div>
+      </div>
+
+      <div class="venture" data-anim data-delay="240">
+        <div class="venture-top">
+          <div class="venture-mark vm-gm">GI</div>
+          <span class="venture-badge vb-closed">Kapatıldı</span>
+        </div>
+        <div>
+          <h3>Glowmix Interiors</h3>
+          <p class="venture-yr">2019 — 2021</p>
+          <p class="venture-desc">İlk şirketim. Mimarlık firmaları için 3D ürün görselleştirme ve iç tasarım hizmetleri. 18 yaşında, YouTube'dan kendi kendime öğrendim. Sonrasının temeli.</p>
+        </div>
+        <div class="venture-chips">
+          <span class="chip">İç Tasarım</span><span class="chip">3D Görselleştirme</span><span class="chip">Mimarlık</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONNECT -->
+<section>
+  <div class="container">
+    <p class="section-label" data-anim>İletişim</p>
+    <h2 data-anim style="margin-bottom:40px">Nasıl Çalışabiliriz</h2>
+    <div class="connect-grid">
+      <div class="connect-card" data-anim>
+        <div class="connect-icon">⚙️</div>
+        <h3>Otomasyon Sistemi Kur</h3>
+        <p>Şirketine özel n8n ve AI otomasyon sistemleri kuruyoruz. E-posta, CRM, raporlama, içerik — tekrarlayan her işi otomatize ediyoruz.</p>
+        <a href="https://coremagnetb2b.com" target="_blank" class="btn btn-white btn-sm">Birlikte Çalışalım</a>
+      </div>
+      <div class="connect-card" data-anim data-delay="80">
+        <div class="connect-icon">📋</div>
+        <h3>Ücretsiz Otomasyon Rehberi</h3>
+        <p>İlk n8n otomasyonunu nasıl kurarsın, hangi süreçleri önce otomatize etmelisin — adım adım kılavuz. Ücretsiz.</p>
+        <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-ghost btn-sm">Ücretsiz İndir</a>
+      </div>
+      <div class="connect-card" data-anim data-delay="160">
+        <div class="connect-icon">🎬</div>
+        <h3>YouTube'da Öğren</h3>
+        <p>n8n, Claude Code ve AI ajan kurulumu hakkında ücretsiz video içerikleri. Teorisiz, doğrudan uygulamalı anlatım.</p>
+        <a href="https://www.youtube.com/@benburhankocabiyik" target="_blank" class="btn btn-ghost btn-sm">Kanala Git</a>
+      </div>
+      <div class="connect-card" data-anim data-delay="240">
+        <div class="connect-icon">🎯</div>
+        <h3>Otomasyon Danışmanlığı</h3>
+        <p>Hangi süreçlerin otomatize edilmesi gerektiğini, hangi araçların kullanılacağını ve nasıl kurulacağını birlikte çözelim.</p>
+        <a href="mailto:burhan.kocabiyik@coremagnetb2b.com" class="btn btn-ghost btn-sm">Seans Ayarla</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section-alt" id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-left" data-anim>
+        <div class="about-photo-wrap">
+          <!-- Fotoğrafı eklemek için: <img src="foto.jpg" alt="Burhan Kocabiyik"> -->
+          <div class="about-initials">BK</div>
+        </div>
+        <div class="about-meta">
+          <div class="meta-row">
+            <span class="meta-icon">🇹🇷 → 🇳🇱</span>
+            <span class="meta-text">Türkiye'den 16 yaşında Rotterdam'a</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-icon">🏆</span>
+            <span class="meta-text">Hollanda'nın En İyi 25 Yaş Altı Girişimcisi (2022)</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-icon">🤝</span>
+            <span class="meta-text">1 exit — ARspar → Floorplanner</span>
+          </div>
+          <div class="meta-row">
+            <span class="meta-icon">⚡</span>
+            <span class="meta-text">Kendi kendine: tasarım, kod, satış</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-right" data-anim data-delay="150">
+        <span class="eyebrow">Hikayem</span>
+        <h2>Telefon tamirinden şirket kurmaya</h2>
+        <p>Türkiye'de doğdum ve büyüdüm. 16 yaşında tek başıma Hollanda'ya taşındım — ne bağlantım, ne yeterli Flemenkçem, ne de param vardı. Her şeyi hızla çözmek zorunda kaldım.</p>
+        <p>17 yaşında telefon tamirini öğrendim ve Apple'da çalışmaya başladım. Aynı zamanda YouTube'dan 3D görselleştirme ve iç tasarım öğrendim. Bu beceri 2019'da <strong>Glowmix Interiors</strong>'a dönüştü — ilk şirketim.</p>
+        <p>Sonrası bir dizi risk. <strong>ARspar</strong> 3D görselleştirme ajansı olarak başladı, e-ticaret için AR platformuna evrildi. 55.000 kullanıcı ve €1M+ gelir sonrasında Mayıs 2024'te Floorplanner'a satıldı. <strong>ARtonar</strong> NFT dalgasına bindi, 6 ayda €250K gelir elde etti, sonra kapandı.</p>
+        <p>Bugün <strong>Coremagnet</strong>'i büyütüyorum — yapay zeka ve kişiselleştirilmiş outreach kullanarak şirketlerin B2B müşteri bulmasını sağlayan bir platform. 2022'de Hollanda'nın En İyi 25 Yaş Altı Girişimcisi seçildim. Asıl ödül ise öğrendiklerim. Hepsini açıkça paylaşıyorum.</p>
+        <a href="https://www.linkedin.com/in/burhankocabiyik/" target="_blank" class="btn btn-white" style="margin-top:8px">LinkedIn'de Bağlan</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FREE RESOURCES -->
+<section id="resources">
+  <div class="container">
+    <p class="section-label" data-anim>Ücretsiz Kaynaklar</p>
+    <h2 data-anim style="margin-bottom:40px">Bildiklerimi Ücretsiz Öğren</h2>
+    <div class="resources-grid">
+
+      <div class="resource resource-main" data-anim>
+        <span class="resource-tag">Ücretsiz İndir</span>
+        <div class="resource-icon">⚙️</div>
+        <h3>n8n Otomasyon Başlangıç Rehberi</h3>
+        <p>Şirketinde ilk otomasyonu nasıl kurarsın — hangi süreçleri önce otomatize etmeli, hangi araçları kullanmalısın.</p>
+        <ul class="resource-list">
+          <li><span>✓</span> En çok zaman alan 10 süreç ve çözümleri</li>
+          <li><span>✓</span> Hazır n8n workflow şablonları</li>
+          <li><span>✓</span> E-posta ve CRM otomasyon kurulumu</li>
+          <li><span>✓</span> AI ajan entegrasyonu adım adım</li>
+        </ul>
+        <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white btn-sm">Ücretsiz İndir →</a>
+      </div>
+
+      <div class="resource" data-anim data-delay="100">
+        <span class="resource-tag">Yakında</span>
+        <div class="resource-icon">🤖</div>
+        <h3>Claude Code ile AI Ajan Kurulum Kiti</h3>
+        <p>Şirketine özel AI ajanları sıfırdan kur. Müşteri soruları, içerik üretimi, veri analizi — hepsini otomatize et.</p>
+        <ul class="resource-list">
+          <li><span>✓</span> 5 hazır AI ajan şablonu</li>
+          <li><span>✓</span> Claude API entegrasyon rehberi</li>
+          <li><span>✓</span> n8n + Claude bağlantı kurulumu</li>
+        </ul>
+        <button class="btn btn-ghost btn-sm" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'})">Bildir Beni →</button>
+      </div>
+
+      <div class="resource" data-anim data-delay="200">
+        <span class="resource-tag">Yakında</span>
+        <div class="resource-icon">🚀</div>
+        <h3>Girişimini Nasıl Satarsın</h3>
+        <p>ARspar satın alma sürecinden öğrendiklerim — ürün-pazar uyumundan anlaşmanın kendisine kadar.</p>
+        <ul class="resource-list">
+          <li><span>✓</span> Satın alma süreci adım adım</li>
+          <li><span>✓</span> Değerleme temelleri</li>
+          <li><span>✓</span> Due diligence kontrol listesi</li>
+        </ul>
+        <button class="btn btn-ghost btn-sm" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'})">Bildir Beni →</button>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="section-alt" id="videos">
+  <div class="container">
+    <p class="section-label" data-anim>YouTube &amp; Eğitim</p>
+    <h2 data-anim style="margin-bottom:10px">Ücretsiz Video İçerikleri</h2>
+    <p class="section-sub" data-anim>n8n otomasyon sistemleri, Claude Code ile AI ajan kurulumu ve şirket süreçlerini otomatize etme hakkında ücretsiz pratik videolar.</p>
+    <div class="video-grid">
+
+      <a href="https://www.youtube.com/@benburhankocabiyik" target="_blank" class="video-card" data-anim>
+        <div class="video-thumb video-thumb-blue" style="background-image:url('https://images.unsplash.com/photo-1518186285589-2f7649de83e0?w=800&q=75&auto=format&fit=crop')">
+          <div class="video-icon">⚙️</div>
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="video-meta">
+          <span class="video-tag">n8n Otomasyon</span>
+          <h3 class="video-title">n8n ile Şirket Süreçlerini Otomatize Et</h3>
+          <p class="video-desc">E-posta, CRM, raporlama — saatler süren işleri n8n ile dakikalara indir.</p>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/@benburhankocabiyik" target="_blank" class="video-card" data-anim data-delay="80">
+        <div class="video-thumb video-thumb-purple" style="background-image:url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=800&q=75&auto=format&fit=crop')">
+          <div class="video-icon">🤖</div>
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="video-meta">
+          <span class="video-tag">Yapay Zeka</span>
+          <h3 class="video-title">Claude Code ile AI Ajan Nasıl Kurulur</h3>
+          <p class="video-desc">Kod bilmeden şirketine özel yapay zeka ajanları kur — adım adım rehber.</p>
+        </div>
+      </a>
+
+      <a href="https://www.youtube.com/@benburhankocabiyik" target="_blank" class="video-card" data-anim data-delay="160">
+        <div class="video-thumb video-thumb-green" style="background-image:url('https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=75&auto=format&fit=crop')">
+          <div class="video-icon">📊</div>
+          <div class="play-btn">▶</div>
+        </div>
+        <div class="video-meta">
+          <span class="video-tag">İş Otomasyonu</span>
+          <h3 class="video-title">Şirketinde İlk Otomasyonu Kur — Başlangıç Rehberi</h3>
+          <p class="video-desc">Nereden başlamalısın, n8n'i nasıl kurarsın, ilk workflow'u nasıl çalıştırırsın.</p>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="video-community" data-anim>
+      <div class="community-text">
+        <span class="community-badge">🔥 807+ Üye</span>
+        <h3>DOA — Otomasyon Ajans Modeli Topluluğu</h3>
+        <p>Türkiye'nin en büyük AI ve otomasyon topluluğu. 1.000+ hazır otomasyon sistemi, haftalık canlı soru-cevap, ve €100K+ gelir üreten üye ağı.</p>
+      </div>
+      <div class="community-actions">
+        <a href="https://www.skool.com/doa/about" target="_blank" class="btn btn-white">Topluluğa Katıl →</a>
+        <a href="https://www.youtube.com/@benburhankocabiyik" target="_blank" class="btn btn-ghost btn-sm">YouTube Kanalı ↗</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="section-alt" id="newsletter">
+  <div class="container">
+    <div class="newsletter-wrap" data-anim>
+      <div class="nl-left">
+        <span class="eyebrow">Bülten</span>
+        <h2>Haftalık Otomasyon &amp; Yapay Zeka İçgörüleri</h2>
+        <p>Her Cuma: Gerçek n8n workflow'ları, yapay zeka ajan kurulumları ve şirket süreçlerini otomatize etmek için kullandığım araçlar. Teori yok, doğrudan uygulama.</p>
+        <div class="nl-stats">
+          <div class="nl-stat"><strong>1.000+</strong><span>abone</span></div>
+          <div class="nl-stat"><strong>Her Cuma</strong><span>gönderim</span></div>
+          <div class="nl-stat"><strong>Ücretsiz</strong><span>sonsuza kadar</span></div>
+        </div>
+      </div>
+      <div class="nl-right">
+        <form id="nl-form">
+          <div class="nl-form">
+            <label for="nl-email">E-posta adresin</label>
+            <input type="email" id="nl-email" class="nl-input" placeholder="sen@sirket.com" required>
+            <button type="submit" class="btn btn-white">Abone Ol →</button>
+            <p class="nl-note">Spam yok. İstediğin zaman çıkabilirsin.</p>
+          </div>
+        </form>
+        <div class="nl-success" id="nl-success">✓ Aboneliğin tamamlandı. Onaylamak için e-postanı kontrol et.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section id="blog">
+  <div class="container">
+    <p class="section-label" data-anim>Yazılar</p>
+    <h2 data-anim style="margin-bottom:40px">Son Makaleler</h2>
+    <div class="blog-grid">
+
+      <div class="post" data-anim>
+        <span class="post-cat">n8n Otomasyon</span>
+        <h3>3 n8n Workflow ile Şirketimin %80'ini Otomatize Ettim</h3>
+        <p>E-posta takibi, müşteri raporlama ve içerik yayınlama — hepsini n8n ile sıfır manuel iş haline getirdim. Workflow'lar dahil.</p>
+        <div class="post-foot">
+          <span class="post-meta">Mart 2026 · 8 dk</span>
+          <a href="#" class="post-read">Oku →</a>
+        </div>
+      </div>
+
+      <div class="post" data-anim data-delay="80">
+        <span class="post-cat">Girişim</span>
+        <h3>Şirketimi Satmaktan Öğrendiklerim (ARspar → Floorplanner)</h3>
+        <p>Satın alma sürecinin tam hikayesi — neyin işe yaradığı, neyi farklı yapardım ve çoğu kurucunun kaçırdığı şey.</p>
+        <div class="post-foot">
+          <span class="post-meta">Şubat 2026 · 12 dk</span>
+          <a href="#" class="post-read">Oku →</a>
+        </div>
+      </div>
+
+      <div class="post" data-anim data-delay="160">
+        <span class="post-cat">Yapay Zeka</span>
+        <h3>Claude Code ile Sıfırdan AI Ajan Nasıl Kurulur — Gerçek Örneklerle</h3>
+        <p>Kod bilmeden, sadece Claude Code kullanarak şirket süreçlerini otomatize eden AI ajanı nasıl kurarsın, adım adım.</p>
+        <div class="post-foot">
+          <span class="post-meta">Ocak 2026 · 10 dk</span>
+          <a href="#" class="post-read">Oku →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="footer-brand-name">Burhan Kocabiyik</span>
+        <p>Şirketlere n8n ve yapay zeka otomasyon sistemleri kuruyorum.</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/in/burhankocabiyik/" target="_blank">LinkedIn</a>
+          <a href="https://x.com/Techburhan" target="_blank">X / Twitter</a>
+          <a href="https://www.instagram.com/benburhankocabiyik/" target="_blank">Instagram</a>
+          <a href="https://benburhan.gumroad.com" target="_blank">Gumroad</a>
+          <a href="https://www.youtube.com/@benburhankocabiyik" target="_blank">YouTube</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Gezin</h4>
+        <a href="#about">Hakkımda</a>
+        <a href="#ventures">Şirketler</a>
+        <a href="#resources">Ücretsiz Kaynaklar</a>
+        <a href="#videos">Videolar</a>
+        <a href="#blog">Blog</a>
+        <a href="links.html">Linkler Sayfası</a>
+      </div>
+      <div class="footer-col">
+        <h4>Girişimler</h4>
+        <a href="https://coremagnetb2b.com" target="_blank">Coremagnet ↗</a>
+        <a href="#">ARspar (Satın Alındı)</a>
+        <a href="#">ARtonar</a>
+        <a href="#">Glowmix Interiors</a>
+      </div>
+      <div class="footer-col">
+        <h4>İletişim</h4>
+        <a href="mailto:burhan.kocabiyik@coremagnetb2b.com">E-posta Gönder</a>
+        <a href="https://benburhan.gumroad.com" target="_blank">Ücretsiz Kaynaklar</a>
+        <a href="mailto:burhan.kocabiyik@coremagnetb2b.com">Danışmanlık</a>
+        <a href="https://www.linkedin.com/in/burhankocabiyik/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Burhan Kocabiyik. Tüm hakları saklıdır.</p>
+      <p>Rotterdam, Hollanda 🇳🇱</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top">↑</button>
+
+<script src="script.js"></script>
+</body>
+</html>

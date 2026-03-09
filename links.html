@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Burhan Kocabiyik — Linkler</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #f5f5f5;
+      --card:    #ffffff;
+      --border:  #e5e5e5;
+      --text:    #000000;
+      --muted:   #737373;
+      --dim:     #a3a3a3;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+    }
+
+    .page {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 40px 16px 60px;
+    }
+
+    /* ─── PROFILE ─── */
+    .profile {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: #000;
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; font-weight: 800; color: #555; letter-spacing: -2px;
+      overflow: hidden;
+      margin-bottom: 14px;
+    }
+    /* Fotoğraf eklemek için içine <img> koy */
+
+    .profile-name {
+      font-size: 1.35rem;
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      margin-bottom: 5px;
+    }
+    .profile-bio {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+      max-width: 280px;
+    }
+
+    /* ─── SOCIAL ICONS ─── */
+    .socials {
+      display: flex;
+      gap: 8px;
+      margin-top: 14px;
+    }
+    .si {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--card);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--muted);
+      text-decoration: none;
+      transition: border-color 0.15s, color 0.15s;
+    }
+    .si:hover { border-color: #aaa; color: #000; }
+
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--dim);
+      margin: 24px 0 10px;
+      padding: 0 2px;
+    }
+
+    /* ─── LINK ROW (main item) ─── */
+    .link-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      text-decoration: none;
+      color: inherit;
+      margin-bottom: 8px;
+      transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .link-item:hover {
+      border-color: #bbb;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+      transform: translateY(-1px);
+    }
+    .link-item:active { transform: scale(0.99); box-shadow: none; }
+
+    .link-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .ic-black  { background: #000; }
+    .ic-green  { background: #dcfce7; }
+    .ic-blue   { background: #dbeafe; }
+    .ic-gray   { background: #f5f5f5; border: 1px solid var(--border); }
+    .ic-orange { background: #fff7ed; }
+    .ic-purple { background: #f5f3ff; }
+
+    .link-text { flex: 1; min-width: 0; }
+    .link-title {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .link-desc {
+      font-size: 0.72rem;
+      color: var(--muted);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    /* Arrow */
+    .link-arrow {
+      color: var(--dim);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      transition: transform 0.15s;
+    }
+    .link-item:hover .link-arrow { transform: translateX(2px); }
+
+    /* Featured (first important link) */
+    .link-featured {
+      background: #000;
+      border-color: #000;
+    }
+    .link-featured .link-title { color: #fff; }
+    .link-featured .link-desc  { color: #737373; }
+    .link-featured .link-arrow { color: #555; }
+    .link-featured:hover { border-color: #222; box-shadow: 0 8px 32px rgba(0,0,0,0.25); }
+
+    /* ─── DIVIDER ─── */
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 20px 0;
+    }
+
+    /* ─── FOOTER ─── */
+    .footer {
+      text-align: center;
+      margin-top: 32px;
+    }
+    .footer a {
+      font-size: 0.7rem;
+      color: var(--dim);
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .footer a:hover { color: var(--muted); }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- PROFILE -->
+  <div class="profile">
+    <div class="avatar">
+      <!-- Fotoğraf: <img src="photo.jpg" alt="Burhan Kocabiyik" style="width:100%;height:100%;object-fit:cover"> -->
+      BK
+    </div>
+    <div class="profile-name">Burhan Kocabiyik</div>
+    <div class="profile-bio">Girişimci · ARspar kurucusu (Floorplanner'a satıldı) · Coremagnet</div>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/burhankocabiyik/" target="_blank" class="si" title="LinkedIn">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a href="https://x.com/Techburhan" target="_blank" class="si" title="X / Twitter">
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/benburhankocabiyik/" target="_blank" class="si" title="Instagram">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ─── SECTION: ÖNE ÇIKANLAR ─── -->
+  <div class="section-label">Öne Çıkanlar</div>
+
+  <a href="https://coremagnetb2b.com" target="_blank" class="link-item link-featured">
+    <div class="link-icon ic-black" style="background:#1a1a2e;">
+      <span>💼</span>
+    </div>
+    <div class="link-text">
+      <div class="link-title">Coremagnet — B2B Büyüme Ajansı</div>
+      <div class="link-desc">Yapay zeka destekli B2B lead generation ve kişiselleştirilmiş outreach</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <a href="https://benburhan.gumroad.com" target="_blank" class="link-item">
+    <div class="link-icon ic-green"><span>📋</span></div>
+    <div class="link-text">
+      <div class="link-title">Ücretsiz B2B Playbook</div>
+      <div class="link-desc">55.000 kullanıcıya ulaştıran framework — ücretsiz</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <a href="index.html#newsletter" class="link-item">
+    <div class="link-icon ic-blue"><span>📬</span></div>
+    <div class="link-text">
+      <div class="link-title">Haftalık Bülten</div>
+      <div class="link-desc">B2B & Yapay Zeka içgörüleri · Her Cuma · 1.000+ abone</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <div class="divider"></div>
+
+  <!-- ─── SECTION: SOSYAl MEDYA ─── -->
+  <div class="section-label">Sosyal Medya</div>
+
+  <a href="https://www.linkedin.com/in/burhankocabiyik/" target="_blank" class="link-item">
+    <div class="link-icon ic-blue" style="background:#e8f0fe;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#0a66c2"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+    </div>
+    <div class="link-text">
+      <div class="link-title">LinkedIn</div>
+      <div class="link-desc">Haftalık B2B, yapay zeka ve girişim içerikleri</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <a href="https://x.com/Techburhan" target="_blank" class="link-item">
+    <div class="link-icon ic-gray">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    </div>
+    <div class="link-text">
+      <div class="link-title">X / Twitter — @Techburhan</div>
+      <div class="link-desc">Teknoloji, girişimcilik ve build in public</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <a href="https://www.instagram.com/benburhankocabiyik/" target="_blank" class="link-item">
+    <div class="link-icon" style="background:linear-gradient(135deg,#ffd6e7,#c4b5fd);">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="#c026d3"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    </div>
+    <div class="link-text">
+      <div class="link-title">Instagram — @benburhankocabiyik</div>
+      <div class="link-desc">Günlük yaşam ve girişimcilik</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <div class="divider"></div>
+
+  <!-- ─── SECTION: DİĞER ─── -->
+  <div class="section-label">Diğer</div>
+
+  <a href="index.html" class="link-item">
+    <div class="link-icon ic-gray"><span>🌐</span></div>
+    <div class="link-text">
+      <div class="link-title">Web Sitem</div>
+      <div class="link-desc">Hikayem, şirketlerim ve ücretsiz kaynaklar</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <a href="mailto:burhan.kocabiyik@coremagnetb2b.com" class="link-item">
+    <div class="link-icon ic-orange"><span>🎯</span></div>
+    <div class="link-text">
+      <div class="link-title">1-on-1 Danışmanlık</div>
+      <div class="link-desc">B2B strateji ve girişim danışmanlığı için seans ayarla</div>
+    </div>
+    <span class="link-arrow">→</span>
+  </a>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <a href="mailto:burhan.kocabiyik@coremagnetb2b.com">burhan.kocabiyik@coremagnetb2b.com</a>
+  </div>
+
+</div>
+</body>
+</html>
