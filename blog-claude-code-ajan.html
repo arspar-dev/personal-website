@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Claude Code ile Sıfırdan AI Ajan Nasıl Kurulur — Burhan Kocabiyik</title>
+  <meta name="description" content="Kod bilmeden, sadece Claude Code kullanarak şirket süreçlerini otomatize eden AI ajanı nasıl kurarsın, adım adım rehber.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .blog-hero {
+      padding: 80px 0 48px;
+      border-bottom: 1px solid #222;
+    }
+    .blog-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .blog-cat {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a3a3a3;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .blog-date { font-size: 0.78rem; color: #666; }
+    .blog-read { font-size: 0.78rem; color: #666; }
+    .blog-hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 760px;
+    }
+    .blog-hero-sub {
+      font-size: 1.05rem;
+      color: #999;
+      line-height: 1.7;
+      max-width: 620px;
+    }
+    .blog-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid #1f1f1f;
+    }
+    .blog-author img {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(20%);
+    }
+    .blog-author-name { font-size: 0.85rem; font-weight: 600; }
+    .blog-author-title { font-size: 0.75rem; color: #666; }
+
+    .blog-content {
+      padding: 56px 0 80px;
+      max-width: 680px;
+    }
+    .blog-content h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 48px 0 16px;
+      color: #fff;
+    }
+    .blog-content h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 32px 0 12px;
+      color: #e5e5e5;
+    }
+    .blog-content p {
+      font-size: 1rem;
+      color: #a3a3a3;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .blog-content strong { color: #e5e5e5; font-weight: 600; }
+    .blog-content ul, .blog-content ol {
+      margin: 0 0 20px 24px;
+      color: #a3a3a3;
+      line-height: 1.8;
+    }
+    .blog-content li { margin-bottom: 8px; font-size: 1rem; }
+    .blog-callout {
+      background: #111;
+      border: 1px solid #222;
+      border-left: 3px solid #525252;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .blog-callout p { margin: 0; color: #bbb; font-size: 0.95rem; }
+    .blog-code {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.82rem;
+      color: #a3e635;
+      line-height: 1.7;
+      overflow-x: auto;
+      white-space: pre;
+    }
+
+    .use-case-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 24px 0;
+    }
+    .use-case {
+      background: #111;
+      border: 1px solid #1f1f1f;
+      border-radius: 12px;
+      padding: 16px 18px;
+    }
+    .use-case-icon { font-size: 1.3rem; margin-bottom: 8px; }
+    .use-case h4 { font-size: 0.85rem; font-weight: 700; color: #e5e5e5; margin-bottom: 6px; }
+    .use-case p { font-size: 0.78rem; color: #666; margin: 0; line-height: 1.5; }
+    @media (max-width: 600px) { .use-case-grid { grid-template-columns: 1fr; } }
+
+    .blog-cta {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 36px 32px;
+      margin: 56px 0 0;
+      text-align: center;
+    }
+    .blog-cta h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: #fff; }
+    .blog-cta p { font-size: 0.9rem; color: #777; margin-bottom: 20px; }
+    .blog-cta-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: color 0.15s;
+    }
+    .blog-back:hover { color: #ccc; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Burhan Kocabiyik</a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#about">Hakkımda</a>
+      <a href="index.html#ventures">Şirketler</a>
+      <a href="index.html#resources">Kaynaklar</a>
+      <a href="index.html#blog">Blog</a>
+    </div>
+    <a href="links.html" class="btn btn-ghost btn-sm" style="margin-left:auto">Tüm Linkler</a>
+    <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white btn-sm">Ücretsiz Kaynaklar</a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="container">
+    <a href="index.html#blog" class="blog-back">← Blog'a Dön</a>
+    <div class="blog-meta-row">
+      <span class="blog-cat">Yapay Zeka</span>
+      <span class="blog-date">Ocak 2026</span>
+      <span class="blog-read">· 10 dk okuma</span>
+    </div>
+    <h1>Claude Code ile Sıfırdan AI Ajan Nasıl Kurulur — Gerçek Örneklerle</h1>
+    <p class="blog-hero-sub">Kod bilmeden, sadece Claude Code kullanarak şirket süreçlerini otomatize eden yapay zeka ajanı nasıl kurarsın. Adım adım, gerçek örneklerle.</p>
+    <div class="blog-author">
+      <img src="images/burhan-profile.png" alt="Burhan Kocabiyik">
+      <div>
+        <div class="blog-author-name">Burhan Kocabiyik</div>
+        <div class="blog-author-title">Coremagnet Kurucusu · Otomasyon & AI</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-content">
+
+    <p>"AI ajan" kelimesi çoğu kişide bir korku yaratıyor: karmaşık kod, Python bilgisi, API entegrasyonları... Aslında durum hiç de öyle değil.</p>
+
+    <p>Claude Code ile birkaç saat içinde <strong>gerçekten işe yarayan</strong> bir AI ajan kurabilirsin. Bu yazıda Coremagnet'te kullandığım örneklerle süreci adım adım anlatacağım.</p>
+
+    <h2>AI Ajan Nedir, Ne İşe Yarar?</h2>
+
+    <p>Bir AI ajan, belirli bir görevi otonom olarak yerine getiren ve bağımsız kararlar alabilen bir sistemdir. Normal otomasyon "A olursa B yap" der. AI ajan ise "müşteri mutlu değilse, sorunu tespit et ve çözüm öner" gibi bağlamsal kararlar alabilir.</p>
+
+    <div class="use-case-grid">
+      <div class="use-case">
+        <div class="use-case-icon">📧</div>
+        <h4>E-posta Yanıtlama</h4>
+        <p>Gelen e-postaları kategorize et, standart soruları otomatik yanıtla</p>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">📊</div>
+        <h4>Veri Analizi</h4>
+        <p>Raporları otomatik oluştur, anomalileri tespit et ve özetle</p>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">💬</div>
+        <h4>Müşteri Desteği</h4>
+        <p>SSS'leri otomatik yanıtla, karmaşık soruları insana yönlendir</p>
+      </div>
+      <div class="use-case">
+        <div class="use-case-icon">✍️</div>
+        <h4>İçerik Üretimi</h4>
+        <p>Blog taslakları, sosyal medya metinleri, ürün açıklamaları</p>
+      </div>
+    </div>
+
+    <h2>Başlamadan Önce: İhtiyacın Olanlar</h2>
+
+    <ul>
+      <li>Claude Code erişimi (claude.ai/code üzerinden)</li>
+      <li>Anthropic API key (console.anthropic.com)</li>
+      <li>n8n kurulumu (n8n.io — ücretsiz cloud başlatabilirsin)</li>
+      <li>15-20 dakika</li>
+    </ul>
+
+    <div class="blog-callout">
+      <p>💡 Kod yazmayacaksın. Claude Code senin için kodu üretiyor. Senin işin: ne istediğini anlatmak ve sonucu test etmek.</p>
+    </div>
+
+    <h2>Adım 1: Kullanım Alanını Belirle</h2>
+
+    <p>En sık yapılan hata: "Genel bir AI ajan yapayım" demek. Çok geniş bir kapsam başarısızlıkla sonuçlanır.</p>
+
+    <p><strong>Doğru yaklaşım:</strong> Tek bir sorunu çöz. Örneğin: "Müşterilerden gelen destek e-postalarını kategorize et ve standart yanıtları otomatik gönder."</p>
+
+    <p>Bu kadar spesifik bir görev tanımıyla Claude Code'a gittiğinde, birkaç dakikada çalışan bir sistem kurabilirsin.</p>
+
+    <h2>Adım 2: Claude Code'da Sistem Kurulumu</h2>
+
+    <p>Claude Code'u aç ve şu şekilde bir prompt yaz:</p>
+
+    <div class="blog-code">Bir e-posta kategorileme ve otomatik yanıt sistemi kurmak istiyorum.
+
+Sistem şunları yapmalı:
+- Gmail'den gelen e-postaları her saat kontrol et
+- E-postayı analiz et ve kategorize et:
+  (fiyat sorusu / teknik destek / iade talebi / diğer)
+- Fiyat sorusu ve teknik destek için hazır şablondan yanıt ver
+- İade talepleri ve "diğer" kategorisini bana flag et
+
+Kullandığım araçlar: n8n, Gmail API, Anthropic Claude API
+
+Başlangıç için n8n workflow JSON'unu oluşturur musun?</div>
+
+    <p>Claude Code bu prompt'a karşılık sana tam n8n workflow JSON'unu verir. Kopyala, n8n'e import et, API key'lerini gir — çalışır.</p>
+
+    <h2>Adım 3: n8n'e Entegre Et</h2>
+
+    <p>Claude Code'un ürettiği workflow'u n8n'e aktarmak için:</p>
+
+    <ol>
+      <li>n8n dashboard'unu aç → "New Workflow" → "Import from JSON"</li>
+      <li>Claude Code'un ürettiği JSON'u yapıştır</li>
+      <li>Gmail node'una Gmail OAuth credentials ekle</li>
+      <li>HTTP Request node'una Claude API key'ini ekle</li>
+      <li>Test et: "Execute Workflow" butonuna bas</li>
+    </ol>
+
+    <div class="blog-callout">
+      <p>🔑 API key'i n8n'de credentials olarak sakla — workflow içine düz metin olarak yapıştırma. n8n'in Credentials menüsü bu iş için var.</p>
+    </div>
+
+    <h2>Adım 4: Prompt'u Şirketine Özelleştir</h2>
+
+    <p>n8n içindeki Claude API node'una gönderdiğin "system prompt" — ajanının kişiliğini ve davranışını belirler. Bunu şirketine göre özelleştir.</p>
+
+    <div class="blog-code">Sen Coremagnet'in müşteri destek asistanısın.
+Görevin gelen e-postaları analiz etmek ve şu JSON formatında yanıt vermek:
+
+{
+  "kategori": "fiyat_sorusu | teknik_destek | iade | diger",
+  "oncelik": "yuksek | normal | dusuk",
+  "otomatik_yanit": true/false,
+  "yanit_taslagi": "eğer otomatik yanıt verilecekse buraya yaz"
+}
+
+Şirket hakkında bilgi:
+- Otomasyon ajansı, n8n ve AI çözümleri sunuyoruz
+- Fiyatlandırma: [fiyat bilgisi]
+- Teknik destek: destek@coremagnet.com</div>
+
+    <h2>Gerçek Örnek: Coremagnet'te Ne Yaptım</h2>
+
+    <p>Coremagnet'te bu sistemi kurduğumda, haftalık gelen ~80 e-postanın <strong>%65'i otomatik yanıtlanır</strong> hale geldi. Geri kalan %35 ise sadece gerçekten dikkat gerektiren sorulardı.</p>
+
+    <p>Sonuç: Müşteri desteğine harcadığım haftalık 6 saat, 2 saate düştü. Ve yanıt kalitesi arttı — çünkü insan dikkati gerçekten zor sorulara gidiyor.</p>
+
+    <h2>Dikkat Etmen Gereken 3 Şey</h2>
+
+    <h3>1. Her zaman insan denetimi bırak</h3>
+    <p>AI ajan mükemmel değil. Kritik kararlar için her zaman bir "insan onayı" adımı ekle. n8n'in "Wait" node'u bu iş için mükemmel.</p>
+
+    <h3>2. Prompt'u test et, optimize et</h3>
+    <p>İlk prompt mükemmel olmaz. 10-20 gerçek e-postayla test et, hatalı kategorilere bak, prompt'u güncelle. Bu iterasyon süreci kritik.</p>
+
+    <h3>3. Maliyetleri takip et</h3>
+    <p>Claude API kullanımı ücretli. n8n üzerindeki her workflow çalışması bir API çağrısı. Başta düşük volume'la test et, maliyeti anla, sonra ölçekle.</p>
+
+    <div class="blog-callout">
+      <p>💸 Tipik maliyet: 1.000 e-posta analizi için ~$2-5 arası. Kazandırılan zamana kıyasla bu çok küçük bir rakam.</p>
+    </div>
+
+    <h2>Özet: Başlamak İçin Yapman Gereken 3 Şey</h2>
+
+    <ol>
+      <li><strong>Tek bir süreci seç</strong> — en çok zaman alan tekrarlayan işi belirle</li>
+      <li><strong>Claude Code'a anlat</strong> — ne yapmasını istediğini net şekilde yaz, n8n workflow iste</li>
+      <li><strong>Test et ve iterate et</strong> — mükemmel olmayacak, ama ilk iterasyon bile %60-70 zaman kazandırır</li>
+    </ol>
+
+    <p>AI ajan kurulumu artık yazılımcıların tekeli değil. Doğru araçlarla, doğru prompt'larla, herkes bunu yapabilir.</p>
+
+    <div class="blog-cta">
+      <h3>Claude Code AI Ajan Kurulum Kiti</h3>
+      <p>5 hazır prompt şablonu, n8n workflow JSON'ları ve adım adım kurulum rehberi. Ücretsiz Gumroad'da.</p>
+      <div class="blog-cta-btns">
+        <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white">Kiti Ücretsiz Al →</a>
+        <a href="https://www.youtube.com/@benburhankocabiyik" target="_blank" class="btn btn-ghost">YouTube'da İzle</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 Burhan Kocabiyik. <a href="index.html" style="color:#555;text-decoration:none;">Ana Sayfaya Dön</a></p>
+      <p>Rotterdam, Hollanda 🇳🇱</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>

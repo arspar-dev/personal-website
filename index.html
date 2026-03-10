@@ -24,7 +24,7 @@
       <a href="#videos">Videolar</a>
     </div>
     <a href="links.html" class="btn btn-ghost btn-sm" style="margin-left:auto">Tüm Linkler</a>
-    <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white btn-sm">Ücretsiz Rehber</a>
+    <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white btn-sm">Ücretsiz Kaynaklar</a>
     <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
   </div>
 </nav>
@@ -44,7 +44,7 @@
           Rotterdam merkezli girişimci. <strong>ARspar</strong>'ı Floorplanner'a sattı. Şimdi <strong>Coremagnet</strong> ile şirketlere n8n ve yapay zeka destekli otomasyon sistemleri kuruyor — insan saatini işlere değil, büyümeye harca.
         </p>
         <div class="hero-actions">
-          <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white">Ücretsiz Otomasyon Rehberini İndir</a>
+          <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white">Ücretsiz Kaynakları İncele</a>
           <a href="#ventures" class="btn btn-ghost">Şirketlerim</a>
         </div>
         <div class="hero-socials">
@@ -161,7 +161,23 @@
         <a href="https://coremagnetb2b.com" target="_blank" class="venture-link">Coremagnet'i Ziyaret Et →</a>
       </div>
 
-      <div class="venture" data-anim data-delay="80">
+      <div class="venture venture-active" data-anim data-delay="80">
+        <div class="venture-top">
+          <div class="venture-mark" style="background:#18181b;color:#a78bfa;">PT</div>
+          <span class="venture-badge vb-active">Aktif</span>
+        </div>
+        <div>
+          <h3>Prototipal</h3>
+          <p class="venture-yr">2025 — Devam Ediyor</p>
+          <p class="venture-desc">Otomasyon ve yapay zeka alanında içerik, eğitim ve topluluk platformu. n8n workflow şablonları, AI ajan kurulum kılavuzları ve uygulamalı eğitimler.</p>
+        </div>
+        <div class="venture-chips">
+          <span class="chip">İçerik</span><span class="chip">Eğitim</span><span class="chip">Topluluk</span>
+        </div>
+        <a href="https://prototipal.com" target="_blank" class="venture-link">Prototipal'i Ziyaret Et →</a>
+      </div>
+
+      <div class="venture" data-anim data-delay="160">
         <div class="venture-top">
           <div class="venture-mark vm-ar">AR</div>
           <span class="venture-badge vb-acquired">✓ Satın Alındı</span>
@@ -177,7 +193,7 @@
         <span class="venture-exit">Floorplanner tarafından satın alındı · Mayıs 2024</span>
       </div>
 
-      <div class="venture" data-anim data-delay="160">
+      <div class="venture" data-anim data-delay="240">
         <div class="venture-top">
           <div class="venture-mark vm-at">AT</div>
           <span class="venture-badge vb-closed">Kapatıldı</span>
@@ -192,7 +208,7 @@
         </div>
       </div>
 
-      <div class="venture" data-anim data-delay="240">
+      <div class="venture" data-anim data-delay="320">
         <div class="venture-top">
           <div class="venture-mark vm-gm">GI</div>
           <span class="venture-badge vb-closed">Kapatıldı</span>
@@ -225,9 +241,9 @@
       </div>
       <div class="connect-card" data-anim data-delay="80">
         <div class="connect-icon">📋</div>
-        <h3>Ücretsiz Otomasyon Rehberi</h3>
-        <p>İlk n8n otomasyonunu nasıl kurarsın, hangi süreçleri önce otomatize etmelisin — adım adım kılavuz. Ücretsiz.</p>
-        <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-ghost btn-sm">Ücretsiz İndir</a>
+        <h3>Ücretsiz Kaynaklar</h3>
+        <p>n8n rehberi, hazır workflow şablonları, Claude Code kurulum kiti ve daha fazlası. Hepsi ücretsiz.</p>
+        <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-ghost btn-sm">Kaynakları İncele</a>
       </div>
       <div class="connect-card" data-anim data-delay="160">
         <div class="connect-icon">🎬</div>
@@ -316,7 +332,7 @@
           <li><span>✓</span> Claude API entegrasyon rehberi</li>
           <li><span>✓</span> n8n + Claude bağlantı kurulumu</li>
         </ul>
-        <button class="btn btn-ghost btn-sm" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'})">Bildir Beni →</button>
+        <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-ghost btn-sm">Gumroad'da Gör →</a>
       </div>
 
       <div class="resource" data-anim data-delay="200">
@@ -329,7 +345,7 @@
           <li><span>✓</span> Değerleme temelleri</li>
           <li><span>✓</span> Due diligence kontrol listesi</li>
         </ul>
-        <button class="btn btn-ghost btn-sm" onclick="document.getElementById('newsletter').scrollIntoView({behavior:'smooth'})">Bildir Beni →</button>
+        <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-ghost btn-sm">Gumroad'da Gör →</a>
       </div>
 
     </div>
@@ -397,35 +413,6 @@
   </div>
 </section>
 
-<!-- NEWSLETTER -->
-<section class="section-alt" id="newsletter">
-  <div class="container">
-    <div class="newsletter-wrap" data-anim>
-      <div class="nl-left">
-        <span class="eyebrow">Bülten</span>
-        <h2>Haftalık Otomasyon &amp; Yapay Zeka İçgörüleri</h2>
-        <p>Her Cuma: Gerçek n8n workflow'ları, yapay zeka ajan kurulumları ve şirket süreçlerini otomatize etmek için kullandığım araçlar. Teori yok, doğrudan uygulama.</p>
-        <div class="nl-stats">
-          <div class="nl-stat"><strong>1.000+</strong><span>abone</span></div>
-          <div class="nl-stat"><strong>Her Cuma</strong><span>gönderim</span></div>
-          <div class="nl-stat"><strong>Ücretsiz</strong><span>sonsuza kadar</span></div>
-        </div>
-      </div>
-      <div class="nl-right">
-        <form id="nl-form">
-          <div class="nl-form">
-            <label for="nl-email">E-posta adresin</label>
-            <input type="email" id="nl-email" class="nl-input" placeholder="sen@sirket.com" required>
-            <button type="submit" class="btn btn-white">Abone Ol →</button>
-            <p class="nl-note">Spam yok. İstediğin zaman çıkabilirsin.</p>
-          </div>
-        </form>
-        <div class="nl-success" id="nl-success">✓ Aboneliğin tamamlandı. Onaylamak için e-postanı kontrol et.</div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- BLOG -->
 <section id="blog">
   <div class="container">
@@ -439,7 +426,7 @@
         <p>E-posta takibi, müşteri raporlama ve içerik yayınlama — hepsini n8n ile sıfır manuel iş haline getirdim. Workflow'lar dahil.</p>
         <div class="post-foot">
           <span class="post-meta">Mart 2026 · 8 dk</span>
-          <a href="#" class="post-read">Oku →</a>
+          <a href="blog-n8n-otomasyon.html" class="post-read">Oku →</a>
         </div>
       </div>
 
@@ -449,7 +436,7 @@
         <p>Satın alma sürecinin tam hikayesi — neyin işe yaradığı, neyi farklı yapardım ve çoğu kurucunun kaçırdığı şey.</p>
         <div class="post-foot">
           <span class="post-meta">Şubat 2026 · 12 dk</span>
-          <a href="#" class="post-read">Oku →</a>
+          <a href="blog-arspar-satis.html" class="post-read">Oku →</a>
         </div>
       </div>
 
@@ -459,7 +446,7 @@
         <p>Kod bilmeden, sadece Claude Code kullanarak şirket süreçlerini otomatize eden AI ajanı nasıl kurarsın, adım adım.</p>
         <div class="post-foot">
           <span class="post-meta">Ocak 2026 · 10 dk</span>
-          <a href="#" class="post-read">Oku →</a>
+          <a href="blog-claude-code-ajan.html" class="post-read">Oku →</a>
         </div>
       </div>
 
@@ -494,6 +481,7 @@
       <div class="footer-col">
         <h4>Girişimler</h4>
         <a href="https://coremagnetb2b.com" target="_blank">Coremagnet ↗</a>
+        <a href="https://prototipal.com" target="_blank">Prototipal ↗</a>
         <a href="#">ARspar (Satın Alındı)</a>
         <a href="#">ARtonar</a>
         <a href="#">Glowmix Interiors</a>

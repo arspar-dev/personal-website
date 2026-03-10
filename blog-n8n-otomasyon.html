@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3 n8n Workflow ile Şirketimin %80'ini Otomatize Ettim — Burhan Kocabiyik</title>
+  <meta name="description" content="E-posta takibi, müşteri raporlama ve içerik yayınlama — hepsini n8n ile sıfır manuel iş haline getirdim. Workflow'lar dahil.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .blog-hero {
+      padding: 80px 0 48px;
+      border-bottom: 1px solid #222;
+    }
+    .blog-meta-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .blog-cat {
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #a3a3a3;
+      background: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+    .blog-date {
+      font-size: 0.78rem;
+      color: #666;
+    }
+    .blog-read {
+      font-size: 0.78rem;
+      color: #666;
+    }
+    .blog-hero h1 {
+      font-size: clamp(1.7rem, 4vw, 2.6rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+      margin-bottom: 20px;
+      max-width: 760px;
+    }
+    .blog-hero-sub {
+      font-size: 1.05rem;
+      color: #999;
+      line-height: 1.7;
+      max-width: 620px;
+    }
+    .blog-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-top: 28px;
+      padding-top: 24px;
+      border-top: 1px solid #1f1f1f;
+    }
+    .blog-author img {
+      width: 40px; height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(20%);
+    }
+    .blog-author-name {
+      font-size: 0.85rem;
+      font-weight: 600;
+    }
+    .blog-author-title {
+      font-size: 0.75rem;
+      color: #666;
+    }
+
+    /* CONTENT */
+    .blog-content {
+      padding: 56px 0 80px;
+      max-width: 680px;
+    }
+    .blog-content h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin: 48px 0 16px;
+      color: #fff;
+    }
+    .blog-content h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin: 32px 0 12px;
+      color: #e5e5e5;
+    }
+    .blog-content p {
+      font-size: 1rem;
+      color: #a3a3a3;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+    .blog-content strong {
+      color: #e5e5e5;
+      font-weight: 600;
+    }
+    .blog-content ul, .blog-content ol {
+      margin: 0 0 20px 24px;
+      color: #a3a3a3;
+      line-height: 1.8;
+    }
+    .blog-content li {
+      margin-bottom: 8px;
+      font-size: 1rem;
+    }
+    .blog-callout {
+      background: #111;
+      border: 1px solid #222;
+      border-left: 3px solid #525252;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 28px 0;
+    }
+    .blog-callout p {
+      margin: 0;
+      color: #bbb;
+      font-size: 0.95rem;
+    }
+    .blog-code {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 24px 0;
+      font-family: 'SF Mono', 'Fira Code', monospace;
+      font-size: 0.82rem;
+      color: #a3e635;
+      line-height: 1.7;
+      overflow-x: auto;
+      white-space: pre;
+    }
+    .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #fff;
+      margin-right: 10px;
+      flex-shrink: 0;
+    }
+    .step-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 4px;
+      margin-bottom: 24px;
+    }
+    .step-row .step-body h3 { margin-top: 0; }
+
+    /* CTA */
+    .blog-cta {
+      background: #111;
+      border: 1px solid #222;
+      border-radius: 16px;
+      padding: 36px 32px;
+      margin: 56px 0 0;
+      text-align: center;
+    }
+    .blog-cta h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+    .blog-cta p {
+      font-size: 0.9rem;
+      color: #777;
+      margin-bottom: 20px;
+    }
+    .blog-cta-btns {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    /* BACK NAV */
+    .blog-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.8rem;
+      color: #666;
+      text-decoration: none;
+      margin-bottom: 40px;
+      transition: color 0.15s;
+    }
+    .blog-back:hover { color: #ccc; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Burhan Kocabiyik</a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#about">Hakkımda</a>
+      <a href="index.html#ventures">Şirketler</a>
+      <a href="index.html#resources">Kaynaklar</a>
+      <a href="index.html#blog">Blog</a>
+    </div>
+    <a href="links.html" class="btn btn-ghost btn-sm" style="margin-left:auto">Tüm Linkler</a>
+    <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white btn-sm">Ücretsiz Kaynaklar</a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="container">
+    <a href="index.html#blog" class="blog-back">← Blog'a Dön</a>
+    <div class="blog-meta-row">
+      <span class="blog-cat">n8n Otomasyon</span>
+      <span class="blog-date">Mart 2026</span>
+      <span class="blog-read">· 8 dk okuma</span>
+    </div>
+    <h1>3 n8n Workflow ile Şirketimin %80'ini Otomatize Ettim</h1>
+    <p class="blog-hero-sub">E-posta takibi, müşteri raporlama ve içerik yayınlama — hepsini n8n ile sıfır manuel iş haline getirdim. Hazır workflow'lar dahil.</p>
+    <div class="blog-author">
+      <img src="images/burhan-profile.png" alt="Burhan Kocabiyik">
+      <div>
+        <div class="blog-author-name">Burhan Kocabiyik</div>
+        <div class="blog-author-title">Coremagnet Kurucusu · Rotterdam</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-content">
+
+    <p>Coremagnet'i büyütürken fark ettim ki zamanımın büyük çoğunluğu aynı işleri tekrar tekrar yapmakla geçiyor. Müşteri e-postalarına cevap veriyorum, haftalık raporları hazırlıyorum, sosyal medya içeriklerini manuel olarak yayınlıyorum. Tüm bunlar saatlerimi alıyordu.</p>
+
+    <p><strong>Çözüm basitti: n8n.</strong> Açık kaynaklı, kendi sunucuma kurabildiğim ve gerçekten işe yarayan bir otomasyon aracı. Bugün sana Coremagnet'te kurduğum 3 workflow'u anlatacağım — şirketimin %80'ini otomatize eden tam olarak bunlar.</p>
+
+    <div class="blog-callout">
+      <p>💡 Bu yazıdaki workflow'ların tamamı Gumroad'da ücretsiz şablon olarak mevcut. Yazının sonunda linki bulabilirsin.</p>
+    </div>
+
+    <h2>Workflow 1: Müşteri E-posta Takip Sistemi</h2>
+
+    <p>En çok zaman harcadığım iş buydu. Potansiyel müşteriye mail attıktan sonra 3 gün içinde cevap gelmezse takip maili atmam gerekiyor. Bu basit iş, günde 20-30 dakikamı alıyordu.</p>
+
+    <h3>Nasıl Çalışıyor?</h3>
+
+    <p>Workflow her 6 saatte bir Gmail'i tarar. Eğer gönderilen bir e-posta 72 saat içinde cevap almamışsa otomatik olarak dostane bir takip maili gönderir. Cevap gelirse workflow durur.</p>
+
+    <ul>
+      <li>Gmail node: Gönderilen e-postaları listele</li>
+      <li>Filter node: 72 saati geçen ve cevaplanmamış e-postalar</li>
+      <li>Gmail node: Kişiselleştirilmiş takip maili gönder</li>
+      <li>Airtable node: Tüm aktiviteyi kaydet</li>
+    </ul>
+
+    <div class="blog-code">Tetikleyici: Schedule (her 6 saatte bir)
+→ Gmail: Son gönderilen mailleri al
+→ Filter: 72+ saat geçmiş ve yanıtsız
+→ IF: Daha önce takip gönderildi mi?
+   EVET → Atla
+   HAYIR → Gmail: Takip maili gönder
+           → Airtable: Aktiviteyi kaydet</div>
+
+    <p>Bu workflow ayda yaklaşık <strong>8-10 saat</strong> kazandırıyor. Üstelik takip oranım %40 arttı — insanlar unutuyor, hatırlatmak işe yarıyor.</p>
+
+    <h2>Workflow 2: Otomatik Müşteri Raporlama</h2>
+
+    <p>Her Pazartesi sabahı müşterilere haftalık performans raporu göndermem gerekiyordu. Google Sheets'ten verileri çekip, düzenleyip, mail atmak — 45 dakika saf manuel iş.</p>
+
+    <h3>Yeni Süreç</h3>
+
+    <p>Her Pazartesi sabahı 08:00'de n8n otomatik olarak çalışır. Google Sheets'ten o haftanın verilerini çeker, Claude API kullanarak özet bir analiz yazar, ve müşteriye kişiselleştirilmiş bir rapor maili gönderir.</p>
+
+    <ul>
+      <li>Her Pazartesi 08:00'de tetiklenir</li>
+      <li>Google Sheets'ten KPI verileri çeker</li>
+      <li>Claude API ile özet analiz üretir</li>
+      <li>Gmail ile müşteri özelinde rapor gönderir</li>
+    </ul>
+
+    <div class="blog-callout">
+      <p>🤖 Claude API entegrasyonu için n8n'in yerleşik HTTP Request node'u yeterli. Sadece endpoint ve API key'i gir, prompt'u yaz, çalışır.</p>
+    </div>
+
+    <p>Müşteriler bu raporları çok beğeniyor. İnsan gibi yazılmış, kişiselleştirilmiş — ama sıfır manuel iş. <strong>Ayda 3 saat kazanç, müşteri memnuniyeti artı.</strong></p>
+
+    <h2>Workflow 3: İçerik Otomasyonu (LinkedIn + X)</h2>
+
+    <p>Sosyal medya içeriği yayınlamak ayrı bir iş. İçeriği yazdıktan sonra platforma girmek, yapıştırmak, yayınlamak — önemsiz görünüyor ama haftada 2-3 saat gidiyor.</p>
+
+    <h3>Çözüm: Airtable + n8n + Sosyal Medya API'leri</h3>
+
+    <p>İçerikleri bir Airtable tablosuna yazdım. Yayın tarihi, platform, metin ve görsel. n8n her gün belirlenen saatte tabloyu kontrol eder ve zamanı gelen içerikleri otomatik yayınlar.</p>
+
+    <ul>
+      <li>Airtable: İçerik takvimi (yazmak hâlâ manuel — ama bu olsun)</li>
+      <li>n8n: Günde 2 kez kontrol, zamanı gelenleri yayınla</li>
+      <li>LinkedIn API veya Phantombuster: LinkedIn paylaşımları</li>
+      <li>Twitter/X API: X paylaşımları</li>
+    </ul>
+
+    <h2>Sonuç: Haftada 15+ Saat Geri Aldım</h2>
+
+    <p>Bu 3 workflow birlikte haftada yaklaşık 15-18 saat kazandırıyor. Kritik olan şu: Bu zamanı boş geçirmiyorum — müşteri görüşmelerine, yeni sistemlere ve işi büyütmeye harcıyorum.</p>
+
+    <p>n8n'in güzelliği açık kaynak olması ve kendi sunucunda çalışması. Aylık abonelik yok, veri güvenliği sende, ve sınırsız workflow. Zapier'in yaptığı her şeyi yapıyor — çoğu zaman daha iyi.</p>
+
+    <div class="blog-callout">
+      <p>🚀 <strong>Başlamak istiyorsan:</strong> n8n.io adresine git, cloud versiyonu ücretsiz başlatabilirsin. İlk workflow'u kurmak 30 dakika alıyor.</p>
+    </div>
+
+    <div class="blog-cta">
+      <h3>Workflow Şablonlarını Ücretsiz Al</h3>
+      <p>Bu 3 workflow'un hazır şablonları Gumroad'da ücretsiz. Şirketime özel ayarlamalar dahil.</p>
+      <div class="blog-cta-btns">
+        <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white">Şablonları İndir →</a>
+        <a href="index.html#blog" class="btn btn-ghost">Diğer Yazılar</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 Burhan Kocabiyik. <a href="index.html" style="color:#555;text-decoration:none;">Ana Sayfaya Dön</a></p>
+      <p>Rotterdam, Hollanda 🇳🇱</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top">↑</button>
+<script src="script.js"></script>
+</body>
+</html>
