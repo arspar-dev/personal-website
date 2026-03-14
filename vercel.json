@@ -1,0 +1,16 @@
+{
+  "headers": [
+    {
+      "source": "/images/(.*)\\.webp",
+      "headers": [
+        { "key": "Content-Type", "value": "image/webp" }
+      ]
+    },
+    {
+      "source": "/images/(.*)\\.png",
+      "headers": [
+        { "key": "Content-Type", "value": "image/png" }
+      ]
+    }
+  ]
+}
