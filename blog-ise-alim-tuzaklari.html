@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otomasyon Ajansında İşe Alım Tuzakları ve Çözümleri — Burhan Kocabiyik</title>
+  <meta name="description" content="İlk çalışanını alırken yaptığım hatalar ve bunları nasıl düzelttiğim. Freelancer vs tam zamanlı, teknik vs operasyonel roller.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    .blog-hero { padding: 80px 0 48px; border-bottom: 1px solid #222; }
+    .blog-meta-row { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-wrap: wrap; }
+    .blog-cat { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #a3a3a3; background: #1a1a1a; border: 1px solid #2a2a2a; padding: 4px 10px; border-radius: 20px; }
+    .blog-date { font-size: 0.78rem; color: #666; }
+    .blog-read { font-size: 0.78rem; color: #666; }
+    .blog-hero h1 { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 20px; max-width: 760px; }
+    .blog-hero-sub { font-size: 1.05rem; color: #999; line-height: 1.7; max-width: 620px; }
+    .blog-author { display: flex; align-items: center; gap: 12px; margin-top: 28px; padding-top: 24px; border-top: 1px solid #1f1f1f; }
+    .blog-author img { width: 40px; height: 40px; border-radius: 50%; object-fit: cover; object-position: center top; filter: grayscale(20%); }
+    .blog-author-name { font-size: 0.85rem; font-weight: 600; }
+    .blog-author-title { font-size: 0.75rem; color: #666; }
+    .blog-content { padding: 56px 0 80px; max-width: 680px; }
+    .blog-content h2 { font-size: 1.4rem; font-weight: 700; letter-spacing: -0.02em; margin: 48px 0 16px; color: #fff; }
+    .blog-content h3 { font-size: 1.1rem; font-weight: 700; margin: 32px 0 12px; color: #e5e5e5; }
+    .blog-content p { font-size: 1rem; color: #a3a3a3; line-height: 1.8; margin-bottom: 20px; }
+    .blog-content strong { color: #e5e5e5; font-weight: 600; }
+    .blog-content ul, .blog-content ol { margin: 0 0 20px 24px; color: #a3a3a3; line-height: 1.8; }
+    .blog-content li { margin-bottom: 8px; font-size: 1rem; }
+    .blog-callout { background: #111; border: 1px solid #222; border-left: 3px solid #525252; border-radius: 10px; padding: 20px 24px; margin: 28px 0; }
+    .blog-callout p { margin: 0; color: #bbb; font-size: 0.95rem; }
+    .blog-cta { background: #111; border: 1px solid #222; border-radius: 16px; padding: 36px 32px; margin: 56px 0 0; text-align: center; }
+    .blog-cta h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: 10px; color: #fff; }
+    .blog-cta p { font-size: 0.9rem; color: #777; margin-bottom: 20px; }
+    .blog-cta-btns { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+    .blog-back { display: inline-flex; align-items: center; gap: 6px; font-size: 0.8rem; color: #666; text-decoration: none; margin-bottom: 40px; transition: color 0.15s; }
+    .blog-back:hover { color: #ccc; }
+  </style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">Burhan Kocabiyik</a>
+    <div class="nav-links" id="nav-links">
+      <a href="index.html#about">Hakkımda</a>
+      <a href="index.html#ventures">Şirketler</a>
+      <a href="index.html#resources">Kaynaklar</a>
+      <a href="index.html#blog">Blog</a>
+    </div>
+    <a href="links.html" class="btn btn-ghost btn-sm" style="margin-left:auto">Tüm Linkler</a>
+    <a href="https://benburhan.gumroad.com" target="_blank" class="btn btn-white btn-sm">Ücretsiz Kaynaklar</a>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<div class="blog-hero">
+  <div class="container">
+    <a href="index.html#blog" class="blog-back">← Blog'a Dön</a>
+    <div class="blog-meta-row">
+      <span class="blog-cat">Ajans Yönetimi</span>
+      <span class="blog-date">Ocak 2026</span>
+      <span class="blog-read">· 9 dk okuma</span>
+    </div>
+    <h1>Otomasyon Ajansında İşe Alım Tuzakları ve Çözümleri</h1>
+    <p class="blog-hero-sub">İlk çalışanını alırken yaptığım hatalar ve bunları nasıl düzelttiğim. Freelancer vs tam zamanlı, teknik vs operasyonel roller.</p>
+    <div class="blog-author">
+      <img src="/images/burhan-profile.webp" alt="Burhan Kocabiyik">
+      <div>
+        <div class="blog-author-name">Burhan Kocabiyik</div>
+        <div class="blog-author-title">Coremagnet Kurucusu · Rotterdam</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="blog-content">
+
+    <p>Tek başına otomasyon ajansı kurabilirsin — aylık $5-10K'ya kadar. Ama onun ötesine geçmek için yardıma ihtiyacın var. Ve işte alım, küçük bir ajansın yapabileceği en riskli şeylerden biri.</p>
+
+    <p>ARspar'da ve Coremagnet'te toplamda 15+ kişi ile çalıştım. Bazı kararlar mükemmeldi, bazıları pahalı dersler oldu. İşte öğrendiklerim.</p>
+
+    <h2>Tuzak 1: Çok Erken Tam Zamanlı Almak</h2>
+
+    <p>İlk içgüdü "büyüyoruz, birini alalım" oluyor. Ama aylık $8K gelir ile tam zamanlı çalışan almak — özellikle Avrupa'da — çok riskli.</p>
+
+    <p><strong>Çözüm: Freelancer ile başla.</strong> İlk 3-6 ay boyunca freelancer kullan. Projeler arttıkça, sürekli iş verebildiğin birini tam zamanlıya geçir.</p>
+
+    <div class="blog-callout">
+      <p>💡 Kural: Aylık geliriniz, alacağınız kişinin maaşının en az 3 katı olmalı. $3K maaş alacak birini ancak $9K+ gelirde almalısın.</p>
+    </div>
+
+    <h2>Tuzak 2: Teknik Kişi Aramak (İlk İşe Alımda)</h2>
+
+    <p>Çoğu ajans sahibi ilk olarak "n8n bilen biri" arıyor. Yanlış. Senin ilk ihtiyacın <strong>operasyonel destek:</strong> müşteri iletişimi, proje takibi, faturalandırma, toplantı organizasyonu.</p>
+
+    <p>Neden? Çünkü sen zaten teknik işi yapabiliyorsun. Ama zamanının %40-50'si operasyonel işlere gidiyor. Bu zamanı geri al — teknik işe odaklan.</p>
+
+    <h3>İlk İşe Alım Sıralaması:</h3>
+    <ol>
+      <li><strong>Sanal asistan / operasyon desteği</strong> — müşteri iletişimi, takvim, fatura</li>
+      <li><strong>Junior otomasyon uzmanı</strong> — senin şablonlarını kullanarak kurulum yapan kişi</li>
+      <li><strong>Satış/business development</strong> — müşteri bulma ve kapama</li>
+      <li><strong>Kıdemli teknik uzman</strong> — karmaşık projeler ve custom geliştirme</li>
+    </ol>
+
+    <h2>Tuzak 3: Süreçsiz İşe Almak</h2>
+
+    <p>Birini alıyorsun, "bak şunu yap" diyorsun. Sonra çıkan iş senin standardını karşılamıyor. Problem kişide değil — <strong>süreçte.</strong></p>
+
+    <p>İşe almadan önce:</p>
+
+    <ul>
+      <li>Her proje türü için adım adım SOP (Standard Operating Procedure) yaz</li>
+      <li>Loom veya video ile süreçleri kaydet</li>
+      <li>Kalite kontrol checklist'i oluştur</li>
+      <li>İlk 2 hafta boyunca her çıktıyı kontrol et</li>
+    </ul>
+
+    <div class="blog-callout">
+      <p>📋 SOP olmadan işe alım = her gün aynı soruları cevaplamak. SOP ile işe alım = "dokümana bak, yapılmış" demek.</p>
+    </div>
+
+    <h2>Tuzak 4: Sadece Teknik Beceriye Bakmak</h2>
+
+    <p>n8n veya Make.com bilgisi öğretilebilir — 2-4 haftada. Ama <strong>iletişim becerisi, problem çözme ve güvenilirlik</strong> öğretilemez.</p>
+
+    <p>Mülakatta sorulacak en iyi sorular:</p>
+
+    <ul>
+      <li>"Son karşılaştığın bir problemi ve nasıl çözdüğünü anlat" — problem çözme becerisi</li>
+      <li>"Bir müşteri isteğini anlamadığında ne yaparsın?" — iletişim becerisi</li>
+      <li>"Deadline'a yetişemeyeceğini fark ettiğinde ne yaparsın?" — güvenilirlik</li>
+    </ul>
+
+    <h2>Tuzak 5: Tek Kişiye Bağımlı Olmak</h2>
+
+    <p>Tüm teknik bilgiyi tek bir kişinin kafasında tutmak — o kişi ayrıldığında her şey durur. <strong>Bilgiyi kişiden bağımsız hale getir:</strong></p>
+
+    <ul>
+      <li>Her workflow'u dokümante et (ne yapıyor, neden, nasıl)</li>
+      <li>Müşteri bilgilerini merkezi bir yerde tut (Notion, Airtable)</li>
+      <li>Şifreleri parola yöneticisinde sakla, kişisel hesaplarda değil</li>
+      <li>En az 2 kişi her kritik sistemi bilsin</li>
+    </ul>
+
+    <h2>Freelancer Nerede Bulursun?</h2>
+
+    <ul>
+      <li><strong>Upwork:</strong> Geniş havuz, filtreleme kolay ama kalite değişken</li>
+      <li><strong>n8n Community Forum:</strong> n8n spesifik yetenekler için en iyi kaynak</li>
+      <li><strong>DOA Topluluğu:</strong> 800+ otomasyon ajans sahibi — birçoğu freelancer olarak da çalışıyor</li>
+      <li><strong>LinkedIn:</strong> "n8n developer" veya "automation specialist" arayışı</li>
+    </ul>
+
+    <h2>Son Söz</h2>
+
+    <p>İşe alım bir yatırım — doğru yapıldığında gelirini katlar, yanlış yapıldığında hem para hem zaman kaybedersin. <strong>Süreçleri yaz, yavaş başla, hızlı değerlendir.</strong></p>
+
+    <div class="blog-cta">
+      <h3>Ajansını Büyütmeye Hazır mısın?</h3>
+      <p>İşe alım SOP şablonları, mülakat soruları ve freelancer değerlendirme checklist'i DOA'da mevcut.</p>
+      <div class="blog-cta-btns">
+        <a href="https://www.skool.com/doa/about" target="_blank" class="btn btn-white">DOA'ya Katıl →</a>
+        <a href="https://otomasyonkur.com" target="_blank" class="btn btn-ghost">otomasyonkur.com</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-bottom">
+      <p>© 2026 Burhan Kocabiyik. <a href="index.html" style="color:#555;text-decoration:none;">Ana Sayfaya Dön</a></p>
+      <p>Rotterdam, Hollanda</p>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top">↑</button>
+<script src="/script.js"></script>
+</body>
+</html>
